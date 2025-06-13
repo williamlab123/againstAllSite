@@ -3,7 +3,8 @@
     --container-color: #242424;
     --text-color: #e0e0e0;
     --heading-color: #ffffff;
-    --accent-color: #6C63FF; /* Blue-violet accent */
+    --accent-color: #6C63FF;
+    /* Blue-violet accent */
     --accent-hover-color: #837dff;
     --border-color: #3a3a3a;
     --warning-color: #ff6363;
@@ -77,20 +78,29 @@ nav ul li a.active {
 }
 
 /* --- Main Content --- */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Roboto', sans-serif;
     color: var(--heading-color);
     font-weight: 700;
 }
 
-h1 { font-size: 2.5em; }
-h2 { font-size: 1.8em; margin-top: 40px; }
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 40px;
+}
 
 a {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
 }
+
 a:hover {
     text-decoration: underline;
     color: var(--accent-hover-color);
@@ -102,6 +112,7 @@ a:hover {
     padding: 80px 20px;
     background: radial-gradient(circle, #2a2a2a 0%, var(--background-color) 70%);
 }
+
 .hero h1 {
     font-family: 'Teko', sans-serif;
     font-size: 6em;
@@ -109,11 +120,13 @@ a:hover {
     margin: 0;
     letter-spacing: 4px;
 }
+
 .hero .tagline {
     font-size: 1.5em;
     color: var(--accent-color);
     margin-top: -10px;
 }
+
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
@@ -126,31 +139,37 @@ a:hover {
     text-decoration: none;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
 .cta-button:hover {
     background-color: var(--accent-hover-color);
     transform: translateY(-2px);
     text-decoration: none;
 }
+
 .release-date {
     margin-top: 20px;
     color: #aaa;
 }
+
 .features {
     padding: 60px 0;
     background-color: var(--container-color);
 }
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
+
 .feature-item {
     background-color: var(--background-color);
     padding: 30px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
 }
+
 .feature-item h3 {
     color: var(--accent-color);
 }
@@ -159,21 +178,27 @@ a:hover {
 .content-page {
     padding: 40px 0;
 }
+
 .content-page h1 {
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
+
 .content-page h2 {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 5px;
 }
-.content-page ul, .content-page ol {
+
+.content-page ul,
+.content-page ol {
     padding-left: 20px;
 }
+
 .content-page li {
     margin-bottom: 10px;
 }
+
 .highlight {
     background-color: rgba(108, 99, 255, 0.05);
     padding: 20px;
@@ -181,12 +206,123 @@ a:hover {
     margin: 30px 0;
     border-radius: 0 8px 8px 0;
 }
+
 .warning-box {
     background-color: rgba(255, 99, 99, 0.05);
     padding: 20px;
     border-left: 5px solid var(--warning-color);
     margin: 30px 0;
     border-radius: 0 8px 8px 0;
+}
+
+.post {
+    background-color: var(--container-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    /* Ensures the border-radius is respected by the image */
+}
+
+.post-header {
+    padding: 20px 25px;
+    background-color: #2a2a2a;
+}
+
+.post-title {
+    margin: 0;
+    color: var(--heading-color);
+    font-size: 1.6em;
+    border-bottom: none;
+}
+
+.post-version {
+    color: var(--accent-color);
+}
+
+.post-date {
+    margin: 5px 0 0 0;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* This is the NEW rule - REPLACE with this */
+/* NEW: The container that holds all the images */
+.post-images-container {
+    display: grid;
+    /* Creates as many columns as fit, each at least 200px wide */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; /* The space between images */
+    padding: 25px;
+}
+
+/* NEW: The style for each individual image in the grid */
+.post-image-item {
+    width: 100%; /* Makes the image fill its grid cell */
+    height: auto;
+    border-radius: 6px;
+
+    /* --- Keeps your pixel art sharp! --- */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+.post-description {
+    padding: 25px;
+}
+
+.post-description p,
+.post-description ul {
+    margin-bottom: 1em;
+}
+
+.post-description ul {
+    list-style-position: inside;
+}
+/* --- Google Translate Widget Styles --- */
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Main widget container */
+#google_translate_element {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background-color: var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+#google_translate_element:hover {
+    background-color: #4a4a4a;
+}
+
+/* This is the inner element that Google creates */
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 1em !important;
+}
+
+/* Hides the "Powered by Google" text */
+.goog-te-gadget-simple .VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none !important;
+}
+
+/* Styles the language text (e.g., "English") */
+.goog-te-gadget-simple span {
+    color: var(--text-color) !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+/* Hides the default down arrow image */
+.goog-te-gadget-simple img {
+    display: none !important;
 }
 
 /* --- Footer --- */
@@ -198,6 +334,7 @@ footer {
     color: #aaa;
     font-size: 0.9em;
 }
+
 footer p {
     margin: 5px 0;
 }

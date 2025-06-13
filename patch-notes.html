@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patch Notes - AgainstALL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Teko:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">AGAINSTALL</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="patch-notes.html" class="active">Patch Notes</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="data-deletion.html">Data Deletion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-page">
+            <div class="container">
+                <h1>Patch Notes</h1>
+
+                <!-- Posts will be dynamically inserted here by the script -->
+                <div id="posts-container">
+                    <p>Loading latest updates...</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Agle | Developed by William Victório</p>
+        </div>
+    </footer>
+
+    <!-- Scripts to build the page -->
+    <!-- Scripts to build the page -->
+    <script src="posts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('posts-container');
+            container.innerHTML = ''; // Clear the "Loading..." message
+
+            patchNotesData.forEach(post => {
+                let galleryHtml = '';
+                // Check if the images array exists and is not empty
+                if (post.images && post.images.length > 0) {
+                    // Start the container for the image gallery
+                    galleryHtml = '<div class="post-images-container">';
+                    // Loop through each image in the array
+                    post.images.forEach(imageUrl => {
+                        galleryHtml += `<img src="${imageUrl}" alt="Patch note image" class="post-image-item">`;
+                    });
+                    // Close the container
+                    galleryHtml += '</div>';
+                }
+
+                const postElement = document.createElement('article');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                <div class="post-header">
+                    <h2 class="post-title">${post.title} - <span class="post-version">${post.version}</span></h2>
+                    <p class="post-date">${post.date}</p>
+                </div>
+                ${galleryHtml} 
+                <div class="post-description">
+                    ${post.description}
+                </div>
+            `;
+                container.appendChild(postElement);
+            });
+        });
+    </script>
+</body>
+
+</html>
