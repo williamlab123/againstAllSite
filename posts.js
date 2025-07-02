@@ -16,14 +16,14 @@ const patchNotesData = [
 
 
     },
-    // {
-    //     version: "v1.0.0",
-    //     date: "June 29, 2025",
-    //     title: "Game Launch!",
-    //     description: `
-    //         <p>Welcome to the official launch of AgainstALL! We are so excited to have you join us on this journey. Climb the leaderboards, unlock cool skins, and survive against all odds.</p>
-    //         <p>Thank you for playing!</p>
-    //     `,
-    //     image: "" // No image for this post
-    // }
+    {
+        version: "v0.2Demo",
+        date: "June 14, 2025",
+        title: "New Shop Skin",
+        description: `
+            <p>New shop skin to make your game look prettier!.</p>
+            <p>Thank you for playing!</p>
+        `,
+        images: ["imgs/ShopSkin0.png"] 
+    }
 ];
